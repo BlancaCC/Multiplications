@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from random import choices, shuffle
-from time import sleep, time
+from time import sleep
 import os
 def clear_terminal():   
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -11,6 +11,23 @@ def integer_input(ms):
         r = input(ms)
     return int(r)
 
+refranero = [
+    'Muy bien Cris :)',
+    'Muy bien Cris :)',
+    'Muy bien Cris :)',
+    'Ánimo que ya queda poco,',
+    'Vamos Cris, que Cloe estará orgullosa de ti',
+    'Muy bien Cris :)',
+    'Oleeee, otra multiplicación hecha :)',
+    'Lo que aprendas ahora nunca lo olvidarás, así que a darle caña...',
+    '¡Qué bien vas y que divertido es este juego!',
+    'Quién puediera ser tú pa echarse una partidilla de este jueguecillo tan divertido...',
+    '¿Te sabes algún chiste de multiplicaciones?',
+    'Vengaaaaaa campeonaaa',
+    'QUÉ BIEN MULTIPLICADO, VAMOS A SEGUR ASÍ',
+    'Muy bien Cris :)',
+    'Muy bien Cris :)'
+]
 
 if __name__ == '__main__':
     correct  = 0
@@ -18,7 +35,7 @@ if __name__ == '__main__':
 
     total_operations = 20 
 
-    numbers = [*list(range(11)), 6,7,7,8,8,9,9,100]
+    numbers = [*list(range(12)), 60,70,700,80,800,90,900,100]
     signs = [-1,1]
 
     products = [
@@ -64,16 +81,17 @@ teclea el número y pulsa enter:
         clear_terminal()
         print('¡CORRECTO!')
         sleep(0.4)
-        print(f'Muy bien Cris :) llevas una precisión de {correct/tries*100}% y te quedan {len(products)} operaciones')
+        r = choices(refranero,k=1)[0]
+        print(r+f' llevas una precisión de {correct/tries*100}% y te quedan {len(products)} operaciones')
         sleep(0.5)
         clear_terminal()
-        print(f'Muy bien Cris :) llevas una precisión de {correct/tries*100}% y te quedan {len(products)} operaciones')
+        print(r+f' llevas una precisión de {correct/tries*100}% y te quedan {len(products)} operaciones')
     # Stats
     print('='*85)
     print('Fin del entrenamiento')
     accuracy  = correct/tries*100
     print(f'Precisión: {accuracy}%')
-    if(accuracy < 93):
+    if(accuracy < 95):
         print(
             '''... Ummm ... 
 ¿Crees que equivocarse tanto significa saber multiplicar?
